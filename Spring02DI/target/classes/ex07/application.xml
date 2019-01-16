@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+	<!-- java로 설정한 객체(Bean)을 xml에 가져오기 위해서는 xmlns를 추가한다.
+		beans element에 아래 namespace 추가
+		xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation="http://www.springframework.org/schema/context"
+	 -->
+	
+	<!-- <context:annotation-config />는 등록된 빈들의 어노테이션을 활성화하는데 사용됨 -->
+	<context:annotation-config />
+	<bean id="config" class="ex07.Config"/>
+	
+	<bean id="sv2" class="ex07.ServiceImpl">
+		<property name="emp" ref="e1" />
+	</bean>
+
+</beans>

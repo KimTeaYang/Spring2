@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- setter injection property 태그로 주입 <bean id="a"> <property name="name" 
+		value="test"/> </bean> - 정수,실수,문자열 값 등을 넣을 때 : value 스프링은 문자열로 작성된 value 
+		값을 적당한 타입에 맞게 변환한다. - 참조유형 : ref -->
+	
+	<bean id="random" class="java.util.Random" />
+	
+	<bean id="emp" class="ex03.EmpImpl">
+		<property name="name" value="홍길동" />
+	</bean>
+	
+	<bean id="emp1" class="ex03.EmpImpl">
+		<property name="ran" ref="random" />
+	</bean>
+	
+	<bean id="calen" class="java.util.Calendar" factory-method="getInstance"></bean>
+	
+	<bean id="emp2" class="ex03.EmpImpl">
+		<property name="cal" ref="calen" />
+	</bean>
+
+</beans>

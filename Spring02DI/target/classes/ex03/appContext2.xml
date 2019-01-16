@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+	
+	<!-- xmlns:p="http://www.springframework.org/schema/p" 네임스페이스 추가
+		setter injection시 사용하는 네임스페이스
+		beans태그 스키마 설정에 네임스페이스를 등록한 뒤 bean태그 속성으로 설정 - p:프로퍼티명="값" - p:프로퍼티명-ref="빈id" -->
+	
+	<bean id="rn" class="java.util.Random" />
+	
+	<!-- p: property명="값"   -->
+	<bean id="emp" class="ex03.EmpImpl" p:name="홍길동" p:ran-ref="rn" p:cal-ref="calen" />
+	
+	<bean id="emp1" class="ex03.EmpImpl" p:ran-ref="rn" />
+	
+	<bean id="calen" class="java.util.Calendar" factory-method="getInstance" />
+	<bean id="emp2" class="ex03.EmpImpl" p:cal-ref="calen" />
+	
+</beans>
