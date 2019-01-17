@@ -11,6 +11,8 @@
 		<config>src/main/java/ex02/empBean.xml</config>
 		<config>src/main/java/ex04/appContext.xml</config>
 		<config>src/main/java/ex07/application.xml</config>
+		<config>src/main/java/ex08/appContext.xml</config>
+		<config>src/main/java/ex09/appliaction.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
